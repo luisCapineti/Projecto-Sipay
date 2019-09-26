@@ -31,8 +31,11 @@ import { mapMutations } from 'vuex'
     },
     methods:{
       search(name){
+        this.cardHandler = false;
         this.$store.commit('perrosStore/imgsearchData', name)
-        this.cardHandler = true;
+        setTimeout(() => {
+          this.cardHandler = true;
+        }, 1000)
       }
 
     }
